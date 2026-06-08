@@ -19,15 +19,27 @@ export function SiteFooter() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             <FooterCol
               title="Company"
-              links={["About", "Vision", "Our Story", "Careers"]}
+              links={[
+                { label: "About", href: "#about" },
+                { label: "Vision", href: "#vision" },
+                { label: "Approach", href: "#approach" },
+                { label: "Focus Areas", href: "#focus" },
+              ]}
             />
             <FooterCol
-              title="Solutions"
-              links={["Innovation Lab", "Advisory", "AI & ML", "Embedded"]}
+              title="Founders"
+              links={[
+                { label: "Francois Mavunila", href: "mailto:francoismavunila@gmail.com" },
+                { label: "Taboka Siyalumba", href: "#contact" },
+              ]}
             />
             <FooterCol
               title="Connect"
-              links={["Contact", "LinkedIn", "X", "Email"]}
+              links={[
+                { label: "acunovapvtltd@gmail.com", href: "mailto:acunovapvtltd@gmail.com" },
+                { label: "+263 78 385 7780", href: "tel:+263783857780" },
+                { label: "+263 77 493 8581", href: "tel:+263774938581" },
+              ]}
             />
           </div>
         </div>
@@ -41,15 +53,18 @@ export function SiteFooter() {
   )
 }
 
-function FooterCol({ title, links }: { title: string; links: string[] }) {
+function FooterCol({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
       <h3 className="text-sm font-medium text-foreground">{title}</h3>
       <ul className="mt-3 space-y-2.5">
         {links.map((l) => (
-          <li key={l}>
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              {l}
+          <li key={l.label}>
+            <a
+              href={l.href}
+              className="break-all text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {l.label}
             </a>
           </li>
         ))}
