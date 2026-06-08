@@ -109,8 +109,11 @@ export function Contact() {
               <h3 className="text-sm font-medium uppercase tracking-widest text-primary">Meet the founders</h3>
               <div className="mt-5 grid gap-4">
                 {founders.map((f) => (
-                  <div key={f.name} className="glass flex items-center gap-4 rounded-2xl p-5">
-                    <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-lg font-semibold text-primary">
+                  <div
+                    key={f.name}
+                    className="flex items-center gap-4 rounded-2xl border border-glass-border bg-card/80 p-5 backdrop-blur-xl"
+                  >
+                    <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-primary-foreground">
                       {f.initials}
                     </div>
                     <div className="min-w-0">
