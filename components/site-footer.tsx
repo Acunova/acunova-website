@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function SiteFooter() {
   return (
     <footer className="px-4 pb-10">
@@ -5,10 +7,13 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
             <div className="flex items-center gap-2.5">
-              <svg viewBox="0 0 32 32" fill="none" className="size-7 text-primary" aria-hidden="true">
-                <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-                <path d="M16 5 L26 27 H21 L16 15 L11 27 H6 Z" fill="currentColor" />
-              </svg>
+              <Image
+                src="/acunova-logo.png"
+                alt="Acunova logo"
+                width={28}
+                height={28}
+                className="size-7 object-contain"
+              />
               <span className="text-lg font-semibold tracking-tight">Acunova</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

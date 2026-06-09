@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 const links = [
@@ -30,7 +31,14 @@ export function SiteNav() {
         )}
       >
         <a href="#top" className="flex items-center gap-2.5">
-          <Logo className="size-7 text-primary" />
+          <Image
+            src="/acunova-logo.png"
+            alt="Acunova logo"
+            width={28}
+            height={28}
+            className="size-7 object-contain"
+            priority
+          />
           <span className="text-lg font-semibold tracking-tight">Acunova</span>
         </a>
 
@@ -92,17 +100,5 @@ export function SiteNav() {
         </div>
       )}
     </header>
-  )
-}
-
-function Logo({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
-      <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-      <path
-        d="M16 5 L26 27 H21 L16 15 L11 27 H6 Z"
-        fill="currentColor"
-      />
-    </svg>
   )
 }
